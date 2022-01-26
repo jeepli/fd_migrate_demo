@@ -47,7 +47,7 @@ func recvFd(uc *net.UnixConn) error {
 		return err
 	}
 	defer f.Close()
-	log.Printf("open file ok, fd is %v\n", fd)
+	log.Printf("open file ok, fd is %v\n", f.Fd())
 
 	br := bufio.NewReader(f)
 	for {
